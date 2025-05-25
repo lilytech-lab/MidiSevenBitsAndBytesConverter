@@ -2,7 +2,7 @@
 
 namespace LilytechLab.MidiSevenBitsAndBytesConverter.Pages;
 
-public partial class Home {
+public partial class Index {
 
 	private string message = string.Empty;
 
