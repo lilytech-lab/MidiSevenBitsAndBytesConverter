@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>LilytechLab.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <GHPages>true</GHPages>
+    <GHpagesBase>/</GHpagesBase>
   </PropertyGroup>
 
   <ItemGroup>
