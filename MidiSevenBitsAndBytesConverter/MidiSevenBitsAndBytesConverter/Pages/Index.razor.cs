@@ -39,6 +39,9 @@ public partial class Index {
 
 		} catch (FormatException ex) {
 			this.message = ex.Message;
+		} catch (Exception ex) {
+			this.message = "Something went wrong.";
+			Console.WriteLine(ex);
 		}
 	}
 
@@ -73,6 +76,9 @@ public partial class Index {
 
 		} catch (FormatException ex) {
 			this.message = ex.Message;
+		} catch (Exception ex) {
+			this.message = "Something went wrong.";
+			Console.WriteLine(ex);
 		}
 	}
 
