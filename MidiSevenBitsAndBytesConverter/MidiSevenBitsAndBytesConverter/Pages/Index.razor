@@ -5,13 +5,13 @@
 <MudPaper Class="ma-2 pa-2">
     <MudText Typo="Typo.h4">How to Use</MudText>
     <MudPaper Elevation="0" Class="ma-2">
-        <MudText Typo="Typo.h6">7 bit to 8 bit </MudText>
+        <MudText Typo="Typo.h6">7 bits to 8 bits</MudText>
         <MudText Class="pl-8">
-            Input MIDI system exclusive message into the upper box and click '7 to 8' button. Then new bytes array converted to 8 bit will be displayed be in the lower box.
+            Input MIDI system exclusive message into the upper box and click '7 to 8' button. Then new bytes array converted to eight bits will be displayed be in the lower box.
         </MudText>
     </MudPaper>
     <MudPaper Elevation="0" Class="ma-2">
-        <MudText Typo="Typo.h6">8 bit to 7 bit </MudText>
+        <MudText Typo="Typo.h6">8 bits to 7 bits</MudText>
         <MudText Class="pl-8">
             Input bytes array into the lower box and click '8 to 7' button. Then new bytes array converted to MIDI system exclusive message will be displayed be in the upper box.
         </MudText>
@@ -21,7 +21,7 @@
 <MudText Class="pa-2">@message</MudText>
 
 <MudPaper Class="pa-2 ma-2 mb-8">
-	<MudTextField T="string" @bind-Value="sevenBitsStr" Label="MIDI 7 bits byte array" Variant="Variant.Text" Clearable AutoGrow Lines="10" />
+	<MudTextField T="string" @bind-Value="sevenBitsStr" Label="SysEx 7 bits byte array" Variant="Variant.Text" Clearable AutoGrow Lines="10" />
 </MudPaper>
 
 <MudStack Row Class="pa-4">
