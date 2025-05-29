@@ -65,7 +65,7 @@ public partial class Index {
 				Span<byte> dest = j + 8 <= sevenBitsByteLength ? sevenBitsBytes[j..(j + 8)] : sevenBitsBytes[j..];
 
 				for (int k = 0; k < source.Length; k++) {
-					// 各byteの1bit目は1byte目に集める
+					// 各byteの最上位bitは1byte目に集める
 					dest[0] |= (byte)((source[k] & 0x80) >> (k + 1));
 					// 残りの7bitのみで1byte分を構成
 					dest[k + 1] = (byte)(source[k] & 0x7F);
