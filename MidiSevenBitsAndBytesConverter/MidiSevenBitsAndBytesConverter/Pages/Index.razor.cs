@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Text;
 
 namespace LilytechLab.MidiSevenBitsAndBytesConverter.Pages;
 
@@ -10,8 +11,19 @@ public partial class Index {
 
 	private string eightBitsStr = string.Empty;
 
+	private string asciiStr  = string.Empty;
+
+	private string EightBitsStr {
+		get => this.eightBitsStr;
+		set {
+			this.eightBitsStr = value;
+			if (string.IsNullOrEmpty(this.eightBitsStr))
+				this.asciiStr = string.Empty;
+		}
+	}
+
 	private void OnSevenToEightClicked() {
-		this.eightBitsStr = string.Empty;
+		this.EightBitsStr = string.Empty;
 		if (string.IsNullOrWhiteSpace(this.sevenBitsStr)) return;
 
 		try {
@@ -36,6 +48,7 @@ public partial class Index {
 			}
 
 			this.eightBitsStr = BitConverter.ToString(eightBitsBytes.ToArray()).Replace('-', ' ');
+			this.asciiStr = Encoding.ASCII.GetString(eightBitsBytes);
 
 		} catch (FormatException ex) {
 			this.message = ex.Message;
@@ -51,6 +64,8 @@ public partial class Index {
 
 		try {
 			var eightBitsBytes = this.GetBytes(this.eightBitsStr);
+			this.asciiStr = Encoding.ASCII.GetString(eightBitsBytes);
+
 			var (sevenBitsByteLength, remainder) = Math.DivRem(eightBitsBytes.Length * 8, 7);
 			if (remainder > 0)
 				sevenBitsByteLength++;

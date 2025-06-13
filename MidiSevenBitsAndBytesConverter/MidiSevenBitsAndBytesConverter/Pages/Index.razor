@@ -34,8 +34,12 @@
     </MudButton>
 </MudStack>
 
-<MudPaper Class="pa-2 ma-2 mb-8">
-    <MudTextField T="string" @bind-Value="eightBitsStr" Label="8 bits byte array" Variant="Variant.Text" Clearable AutoGrow Lines="10"
-        Style="font-family:'Courier New', Courier, Monaco, Menlo, Consolas, 'Lucida Console', 'ＭＳ ゴシック', 'MS Gothic', monospace;" />
+<MudPaper Class="d-flex flex-row pa-2 ma-2 mb-8">
+    <MudTextField T="string" @bind-Value="EightBitsStr" Label="8 bits byte array" Variant="Variant.Outlined" Clearable AutoGrow Lines="10"
+        Style="font-family:'Courier New', Courier, Monaco, Menlo, Consolas, 'Lucida Console', 'ＭＳ ゴシック', 'MS Gothic', monospace;"
+        Class="flex-grow-3 px-2"/>
+    <MudTextField T="string" @bind-Value="@asciiStr" Label="Ascii" ReadOnly="true" Variant="Variant.Outlined" Clearable AutoGrow Lines="10"
+        Style="font-family:'Courier New', Courier, Monaco, Menlo, Consolas, 'Lucida Console', 'ＭＳ ゴシック', 'MS Gothic', monospace;"
+        Class="flex-grow-2 px-2"/>
 </MudPaper>
 
